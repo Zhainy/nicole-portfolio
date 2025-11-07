@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Handjet:wght@100..900&family=Tiny5&display=swap');
+/* src/assets/styles/_variables.scss */
+
+/* === Tokens Sass (para autocompletado y uso con $) === */
+$royal-purple-500: #36244C;
+$royal-purple-400: #5B3D7E;
+$royal-purple-300: #7F55B1;
+$royal-purple-200: #AA8ECB;
+$royal-purple-100: #D4C6E5;
+
+$french-rose-500: #6D1B37;
+$french-rose-400: #B62E5C;
+$french-rose-300: #FF4081;
+$french-rose-200: #FF8CB3;
+$french-rose-100: #FFD9E6;
+
+$salmon-pink-500: #694249;
+$salmon-pink-400: #AE6F7A;
+$salmon-pink-300: #F49BAB;
+$salmon-pink-200: #F8C3CD;
+$salmon-pink-100: #FDEBEE;
+
+$mint-blue-500: #426962;
+$mint-blue-400: #6FAEA3;
+$mint-blue-300: #9BF4E4;
+$mint-blue-200: #C3F8EF;
+$mint-blue-100: #EBFDFA;
+
+/* === Exponer también como variables CSS (para theming/runtime) === */
+:root {
+  --royal-purple-500: #{$royal-purple-500};
+  --royal-purple-400: #{$royal-purple-400};
+  --royal-purple-300: #{$royal-purple-300};
+  --royal-purple-200: #{$royal-purple-200};
+  --royal-purple-100: #{$royal-purple-100};
+
+  --french-rose-500: #{$french-rose-500};
+  --french-rose-400: #{$french-rose-400};
+  --french-rose-300: #{$french-rose-300};
+  --french-rose-200: #{$french-rose-200};
+  --french-rose-100: #{$french-rose-100};
+
+  --salmon-pink-500: #{$salmon-pink-500};
+  --salmon-pink-400: #{$salmon-pink-400};
+  --salmon-pink-300: #{$salmon-pink-300};
+  --salmon-pink-200: #{$salmon-pink-200};
+  --salmon-pink-100: #{$salmon-pink-100};
+
+  --mint-blue-500: #{$mint-blue-500};
+  --mint-blue-400: #{$mint-blue-400};
+  --mint-blue-300: #{$mint-blue-300};
+  --mint-blue-200: #{$mint-blue-200};
+  --mint-blue-100: #{$mint-blue-100};
+
+  /* Degradados */
+  --gradient-angular: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--mint-blue-300) 0%,
+    var(--royal-purple-300) 37%,
+    var(--french-rose-300) 77%
+  );
+  --gradient-linear: linear-gradient(
+    90deg,
+    var(--mint-blue-300) 0%,
+    var(--royal-purple-300) 42%,
+    var(--french-rose-300) 100%
+  );
+}
