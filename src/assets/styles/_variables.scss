@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Handjet:wght@100..900&family=Tiny5&display=swap');
 /* src/assets/styles/_variables.scss */
 
+/* === Fonts === */
+$font-primary: 'Bitter', serif;
+$font-secondary: 'Tiny5', monospace;
+$font-caption: 'Handjet', cursive; 
+
+
 /* === Tokens Sass (para autocompletado y uso con $) === */
 $royal-purple-500: #36244C;
 $royal-purple-400: #5B3D7E;
@@ -28,6 +34,11 @@ $mint-blue-100: #EBFDFA;
 
 /* === Exponer también como variables CSS (para theming/runtime) === */
 :root {
+  /* === Fonts === */
+  --font-primary: 'Bitter', serif;
+  --font-secondary: 'Tiny5', monospace;
+  --font-caption: 'Handjet', cursive; 
+
   --royal-purple-500: #{$royal-purple-500};
   --royal-purple-400: #{$royal-purple-400};
   --royal-purple-300: #{$royal-purple-300};
@@ -59,10 +70,10 @@ $mint-blue-100: #EBFDFA;
     var(--royal-purple-300) 37%,
     var(--french-rose-300) 77%
   );
-  --gradient-linear: linear-gradient(
-    90deg,
-    var(--mint-blue-300) 0%,
-    var(--royal-purple-300) 42%,
-    var(--french-rose-300) 100%
-  );
+ --gradient-linear: linear-gradient(
+  180deg,
+    var(--mint-blue-300) 30%,
+  var(--french-rose-300) 80%,
+  var(--royal-purple-100) 100%
+);
 }

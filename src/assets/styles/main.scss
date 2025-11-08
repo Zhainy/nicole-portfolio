@@ -1,4 +1,5 @@
-@use './_variables.scss' as *;   // contiene :root y las --variables
-@use './_global.scss';
-@use './_sections.scss';
-@use './_mixins.scss';
+@use './variables' as *;   // contiene :root y las --variables
+@use './mixins';
+@use './global';
+@use './sections';
+

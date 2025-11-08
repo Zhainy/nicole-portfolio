@@ -1,0 +1,62 @@
+@use "./variables" as *;
+// _global.scss
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--royal-purple-400);
+  color: var(--french-rose-100);
+}
+h1 {
+  font-family: var(--font-primary);
+  font-size: 4.5rem ;
+  line-height: 120%;
+  font-weight: 500;
+  color: $french-rose-100 ;
+}
+
+h2 {
+  font-family: var(--font-secondary);
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: .2rem ;
+}
+h3 {
+  font-family: var(--font-caption);
+  font-size: 1.5rem;
+  line-height: 1rem;
+  letter-spacing: .2rem ;
+  font-weight: 500;
+  color: $french-rose-100 ;
+  padding-top: 0.5rem;
+  margin: 1.5rem 0;
+}
+h4 {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+}
+span{
+  font-family: var(--font-caption);
+  font-size: 1.5rem;
+  letter-spacing: .2rem ;
+  font-weight: 400;
+  color: $mint-blue-300 ;
+}
+p {
+  font-family: var(--font-primary);
+  font-weight: 300;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width:90vw;
+  margin: 0 auto;
+}
