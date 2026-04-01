@@ -1,4 +1,6 @@
 <script setup>
+import { svgIcons } from '@/utils/icons.js'
+
 defineProps({
     educationTitle: {
         type: String,
@@ -12,21 +14,44 @@ defineProps({
         type: String,
         required: true,
     },
+    certificateUrl: {
+        type: String,
+        default: '',
+    },
 })
+
+const GraduationCapIcon = svgIcons['graduation-cap']
+const FileBadgeIcon = svgIcons['file-badge']
 </script>
 
 <template>
     <article class="education-card pixel-panel">
-        <h3 class="education-card__title">{{ educationTitle }}</h3>
-        <p class="education-card__subtitle">{{ educationSubtitle }}</p>
-        <p class="education-card__year">{{ educationYear }}</p>
+        <div class="education-card__content">
+            <h3 class="education-card__title">{{ educationTitle }}</h3>
+            <p class="education-card__subtitle">{{ educationSubtitle }}</p>
+            <p class="education-card__year">{{ educationYear }}</p>
+        </div>
+        <div class="education-card__side-icons">
+            <component :is="GraduationCapIcon" class="education-card__grad-icon" aria-hidden="true" />
+            <a
+                v-if="certificateUrl"
+                :href="certificateUrl"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="education-card__cert-link"
+                :aria-label="`Ver certificado de ${educationTitle}`"
+            >
+                <component :is="FileBadgeIcon" class="education-card__cert-icon" aria-hidden="true" />
+            </a>
+        </div>
     </article>
 </template>
 
 <style lang="scss" scoped>
 .education-card {
     display: grid;
-    gap: 0.4rem;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem 0.75rem;
     padding: 1rem 1.1rem;
     position: relative;
     overflow: hidden;
@@ -62,8 +87,54 @@ defineProps({
     transform: translateX(135%);
 }
 
+.education-card__content {
+    display: grid;
+    gap: 0.4rem;
+}
+
 .education-card__title {
     color: var(--heading-strong);
+}
+
+.education-card__side-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.1rem;
+    padding-bottom: 0.12rem;
+    flex-shrink: 0;
+}
+
+.education-card__grad-icon {
+    width: 1.25em;
+    height: 1.25em;
+    display: block;
+    overflow: visible;
+    stroke: currentColor;
+    color: var(--accent-strong);
+    font-size: var(--h3-size, 1.17rem);
+}
+
+.education-card__cert-link {
+    display: flex;
+    color: var(--text-muted);
+    transition: color 180ms ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--accent-strong);
+        outline: none;
+    }
+}
+
+.education-card__cert-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    display: block;
+    overflow: visible;
+    stroke: currentColor;
+    fill: none;
 }
 
 .education-card__subtitle,

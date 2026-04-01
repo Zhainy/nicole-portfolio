@@ -6,7 +6,7 @@ import { svgIcons } from '@/utils/icons.js'
 const props = defineProps({
   label: {
     type: String,
-    required: true,
+    default: '',
   },
   icon: {
     type: String,
@@ -42,7 +42,8 @@ const iconComponent = computed(() => (props.icon ? svgIcons[props.icon] : null))
 <template>
   <component
     :is="tagName"
-    :class="['button', `button--${size}`, `button--${variant}`]"
+    :class="['button', `button--${size}`, `button--${variant}`, { 'button--icon-round': variant === 'icon' }]"
+    :aria-label="!label && icon ? icon : undefined"
     :href="href || undefined"
     :download="download || undefined"
     :rel="isExternal ? 'noreferrer noopener' : undefined"
@@ -54,7 +55,7 @@ const iconComponent = computed(() => (props.icon ? svgIcons[props.icon] : null))
       v-if="iconComponent"
       :class="['button__icon', `button__icon--${iconSize}`]"
     />
-    <span class="button__label">{{ label }}</span>
+    <span v-if="label" class="button__label">{{ label }}</span>
   </component>
 </template>
 
@@ -120,7 +121,7 @@ const iconComponent = computed(() => (props.icon ? svgIcons[props.icon] : null))
   --button-border: var(--panel-border-soft);
   --button-hover-bg: var(--french-rose-300);
   --button-hover-fg: var(--french-rose-100);
-  --button-hover-border: var(--french-rose-400);
+  --button-hover-border: var(--accent-strong);
 }
 
 :global(.dark) .button--outline.button--small:hover,
@@ -130,19 +131,52 @@ const iconComponent = computed(() => (props.icon ? svgIcons[props.icon] : null))
   --button-hover-border: var(--mint-blue-500);
 }
 
+.button--icon {
+  --button-bg: color-mix(in srgb, var(--panel-raised) 62%, transparent);
+  --button-fg: var(--heading-strong);
+  --button-border: var(--panel-border-soft);
+  --button-hover-bg: var(--french-rose-300);
+  --button-hover-fg: var(--french-rose-100);
+  --button-hover-border: var(--mint-blue-300);
+}
+
+:global(.dark) .button--icon:hover,
+:global(.dark) .button--icon:focus-visible {
+  --button-hover-bg: var(--mint-blue-300);
+  --button-hover-fg: var(--royal-purple-500);
+  --button-hover-border: var(--mint-blue-500);
+}
+
+.button--icon-round {
+  border-radius: 50%;
+  gap: 0;
+}
+
+.button--icon-round.button--small {
+  width: 2.45rem;
+  padding: 0;
+}
+
+.button--icon-round.button--large {
+  width: 3.3rem;
+  padding: 0;
+}
+
 .button__label {
   font-family: var(--font-caption);
   line-height: 1;
 }
 
 .button__icon {
+  display: block;
   stroke: currentColor;
   fill: none;
+  overflow: visible;
 }
 
 .button__icon--small {
-  width: 1rem;
-  height: 1rem;
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .button__icon--large {

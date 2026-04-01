@@ -26,7 +26,7 @@ import { contactDetails } from '@/data/portfolio'
 				<CustomButton
 					label="contáctame"
 					:href="`mailto:${contactDetails.email}`"
-					icon="send"
+					icon="mouse-pointer-click"
 					variant="outline"
 					size="small"
 					icon-size="small"
@@ -107,13 +107,14 @@ import { contactDetails } from '@/data/portfolio'
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.75rem;
+	font-weight: 600;
 }
 
 /* Botones con contraste legible sobre el fondo rosa claro */
 :deep(.button--outline) {
 	--button-bg: transparent;
-	--button-fg: var(--royal-purple-500);
-	--button-border: var(--royal-purple-300);
+	--button-fg: var(--french-rose-300);
+	--button-border: var(--french-rose-300);
 	--button-hover-bg: var(--royal-purple-300);
 	--button-hover-fg: var(--french-rose-100);
 	--button-hover-border: var(--royal-purple-400);
@@ -121,10 +122,10 @@ import { contactDetails } from '@/data/portfolio'
 
 /* En modo oscuro el shape sigue siendo rosa claro — asegurar texto oscuro */
 :global(.dark) .footer-section__content {
-	color: var(--royal-purple-500);
+	color: var(--french-rose-300);
 }
 
 :global(.dark) .footer-section__accent {
-	color: var(--french-rose-400);
+	color: var(--french-rose-300);
 }
 </style>

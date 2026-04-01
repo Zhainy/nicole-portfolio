@@ -48,22 +48,21 @@ const goNext = () => {
               :education-title="item.title"
               :education-subtitle="item.institution"
               :education-year="item.year"
+              :certificate-url="item.certificateUrl"
             />
           </div>
           <div class="education-section__controls">
             <CustomButton
-              label="anterior"
               size="small"
-              variant="outline"
-              icon="mouse-pointer-click"
+              variant="icon"
+              icon="arrow-big-left-dash"
               icon-size="small"
               @click="goPrev"
             />
             <CustomButton
-              label="siguiente"
               size="small"
-              variant="outline"
-              icon="mouse-pointer-click"
+              variant="icon"
+              icon="arrow-big-right-dash"
               icon-size="small"
               @click="goNext"
             />
@@ -97,10 +96,10 @@ const goNext = () => {
   padding: 0 1.25rem 1.25rem;
 }
 
-.education-section__controls :deep(.button--outline) {
+.education-section__controls :deep(.button--icon) {
   --button-bg: color-mix(in srgb, var(--panel-raised) 80%, white);
   --button-fg: var(--royal-purple-500);
-  --button-border: color-mix(in srgb, var(--royal-purple-300) 72%, var(--mint-blue-300));
+  --button-border: var(--mint-blue-300);
 }
 
 @include respond-down(tablet) {

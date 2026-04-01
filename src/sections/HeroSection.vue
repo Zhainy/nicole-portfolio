@@ -31,7 +31,7 @@ import { contactDetails, heroActions } from '@/data/portfolio'
         </div>
 
         <CustomButton
-          label="open to work"
+          label="open to work_"
           href="#contact"
           icon="briefcase-business"
           variant="primary"
@@ -47,7 +47,7 @@ import { contactDetails, heroActions } from '@/data/portfolio'
           alt="Ilustración de Nicole celebrando con su notebook"
         />
         <div class="hero-section__contact panel">
-          <div class="hero-section__mail">
+          <div class="hero-section__mail ">
             <Send class="hero-section__mail-icon" />
             <a :href="`mailto:${contactDetails.email}`">{{ contactDetails.email }}</a>
           </div>
@@ -115,7 +115,7 @@ import { contactDetails, heroActions } from '@/data/portfolio'
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  color: var(--heading-strong);
+  color: var(--accent-strong);
   font-family: var(--font-caption);
   font-size: 1.2rem;
   letter-spacing: 0.12rem;
