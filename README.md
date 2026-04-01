@@ -1,10 +1,19 @@
-<<<<<<< HEAD
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
-=======
 # nicole-portfolio
-Portafolio 
->>>>>>> 0f5120b3437e8a2c273ef10cfda539cb9f57a6ed
+
+Portafolio personal desarrollado con Vue 3, Vite y Sass.
+
+## Scripts
+
+- `npm run dev`: inicia el entorno de desarrollo.
+- `npm run build`: genera la versión de producción.
+- `npm run preview`: sirve el build localmente.
+
+## Stack
+
+- Vue 3
+- Vite
+- Sass
+
+## Objetivo
+
+Mostrar una propuesta visual inspirada en la maqueta original de Nicole, con una estructura más mantenible, estilos compartidos y mejor comportamiento responsive.

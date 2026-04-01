@@ -1,0 +1,55 @@
+@use 'sass:map';
+
+@mixin phone-xs {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin phone-sm {
+  @media screen and (min-width: 376px) and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone-md {
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm {
+  @media screen and (min-width: 601px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+$breakpoints: (
+  phone: 600px,
+  tablet: 900px,
+  desktop: 1200px,
+);
+
+@mixin respond-down($breakpoint) {
+  @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin respond-up($breakpoint) {
+  @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}

@@ -1,62 +1,96 @@
 @use "./variables" as *;
-// _global.scss
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: var(--royal-purple-400);
-  color: var(--french-rose-100);
+
+html {
+  scroll-behavior: smooth;
 }
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--app-bg);
+  background-image: var(--app-bg-gradient);
+  color: var(--app-fg);
+  font-family: var(--font-primary);
+  transition:
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
 h1 {
   font-family: var(--font-primary);
-  font-size: 4.5rem ;
-  line-height: 120%;
-  font-weight: 500;
-  color: $french-rose-100 ;
+  font-size: clamp(3.4rem, 8vw, 5.7rem);
+  line-height: 0.96;
+  font-weight: 700;
+  color: var(--h1-color);
 }
 
 h2 {
   font-family: var(--font-secondary);
-  font-size: 4rem;
-  line-height: 4rem;
-  letter-spacing: .2rem ;
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.2rem;
 }
+
 h3 {
   font-family: var(--font-caption);
-  font-size: 1.5rem;
-  line-height: 1rem;
-  letter-spacing: .2rem ;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  letter-spacing: 0.16rem;
   font-weight: 500;
-  color: $french-rose-100 ;
-  padding-top: 0.5rem;
-  margin: 1.5rem 0;
+  color: var(--h3-color);
 }
+
 h4 {
   font-family: var(--font-primary);
-  font-size: 1.2rem;
-  line-height: 1.2rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.4;
   font-style: italic;
   font-weight: 400;
 }
-span{
-  font-family: var(--font-caption);
-  font-size: 1.5rem;
-  letter-spacing: .2rem ;
-  font-weight: 400;
-  color: $mint-blue-300 ;
-}
+
 p {
   font-family: var(--font-primary);
-  font-weight: 300;
+  font-size: clamp(1rem, 1.9vw, 1.15rem);
+  line-height: 1.65;
+  font-weight: 400;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.container {
-  width:90vw;
-  margin: 0 auto;
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+#app {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent-soft) 70%, transparent);
+  color: var(--heading-strong);
 }
