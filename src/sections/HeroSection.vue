@@ -171,4 +171,14 @@ import { svgIcons } from '@/utils/icons.js'
     margin-top: 0.4rem;
   }
 }
+
+@include respond-down(phone) {
+  .hero-section__copy {
+    order: -1;
+  }
+
+  .hero-section__visual {
+    order: 0;
+  }
+}
 </style>
