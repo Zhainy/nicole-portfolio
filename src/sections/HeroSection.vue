@@ -1,11 +1,11 @@
 <script setup>
-import Send from '@/assets/icons/send.svg'
 import heroIllustration from '@/assets/images/hero-section.png'
 
 import CarrouselSubtitle from '@/components/CarrouselSubtitle.vue'
 import CustomButton from '@/components/CustomButton.vue'
 import ToggleThemeMode from '@/components/ToggleThemeMode.vue'
 import { contactDetails, heroActions } from '@/data/portfolio'
+import { svgIcons } from '@/utils/icons.js'
 </script>
 
 <template>
@@ -17,6 +17,29 @@ import { contactDetails, heroActions } from '@/data/portfolio'
         <h1>Nicole <br />Fernández</h1>
         <CarrouselSubtitle />
 
+        <div class="hero-section__contact panel panel--neon-border">
+          <div class="hero-section__mail">
+            <component :is="svgIcons['send']" class="hero-section__mail-icon" />
+            <a :href="`mailto:${contactDetails.email}`">{{ contactDetails.email }}</a>
+          </div>
+          <p>{{ contactDetails.availability }}</p>
+          <CustomButton
+          label="open to work_"
+          href="#contact"
+          icon="briefcase-business"
+          variant="primary"
+          size="large"
+          icon-size="large"
+        />
+        </div>
+      </div>
+
+      <div class="section-visual hero-section__visual">
+        <img
+          class="hero-section__image"
+          :src="heroIllustration"
+          alt="Ilustración de Nicole celebrando con su notebook"
+        />
         <div class="hero-section__actions">
           <CustomButton
             v-for="action in heroActions"
@@ -28,30 +51,6 @@ import { contactDetails, heroActions } from '@/data/portfolio'
             size="small"
             icon-size="small"
           />
-        </div>
-
-        <CustomButton
-          label="open to work_"
-          href="#contact"
-          icon="briefcase-business"
-          variant="primary"
-          size="large"
-          icon-size="large"
-        />
-      </div>
-
-      <div class="section-visual hero-section__visual">
-        <img
-          class="hero-section__image"
-          :src="heroIllustration"
-          alt="Ilustración de Nicole celebrando con su notebook"
-        />
-        <div class="hero-section__contact panel">
-          <div class="hero-section__mail ">
-            <Send class="hero-section__mail-icon" />
-            <a :href="`mailto:${contactDetails.email}`">{{ contactDetails.email }}</a>
-          </div>
-          <p>{{ contactDetails.availability }}</p>
         </div>
       </div>
     </div>
@@ -65,6 +64,7 @@ import { contactDetails, heroActions } from '@/data/portfolio'
 
 .hero-section__grid {
   align-items: start;
+  transform: translateY(-5%);
 }
 
 .hero-section__copy {
@@ -79,12 +79,14 @@ import { contactDetails, heroActions } from '@/data/portfolio'
   letter-spacing: 0.18rem;
   text-transform: lowercase;
   color: var(--accent-strong);
+  font-weight: 500;
 }
 
 .hero-section__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-top: 0.15rem;
 }
 
 :global(.dark) .hero-section :deep(.button--outline:hover),
@@ -106,9 +108,7 @@ import { contactDetails, heroActions } from '@/data/portfolio'
   gap: 0.8rem;
   padding: 1rem 1.15rem;
   width: min(100%, 30rem);
-  margin-top: 1rem;
-  position: relative;
-  bottom: 10rem;
+  margin-top: 1.1rem;
 }
 
 .hero-section__mail {
@@ -135,14 +135,20 @@ import { contactDetails, heroActions } from '@/data/portfolio'
   min-height: 26rem;
   justify-items: center;
   align-content: start;
-  gap: 0.75rem;
+  gap: 0.25rem;
+  margin-top: -1.5rem;
 }
 
 .hero-section__image {
   position: relative;
-  bottom: 10%;
+  top: 0;
   z-index: 1;
   width: min(100%, 32rem);
+  filter: drop-shadow(0 14px 24px color-mix(in srgb, var(--royal-purple-500) 30%, transparent));
+}
+
+:global(.dark) .hero-section__image {
+  filter: none;
 }
 
 @include respond-down(tablet) {
@@ -154,6 +160,11 @@ import { contactDetails, heroActions } from '@/data/portfolio'
     order: -1;
     min-height: auto;
     justify-items: start;
+    margin-top: 0;
+  }
+
+  .hero-section__grid {
+    transform: none;
   }
 
   .hero-section__contact {

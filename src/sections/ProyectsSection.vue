@@ -49,16 +49,21 @@ import { projectItems } from '@/data/portfolio'
 	position: relative;
 	overflow: visible;
 	z-index: 1;
+	align-content: center;
+	gap: 1rem;
+	justify-items: end;
 }
 
 .projects-section__visual :deep(.section-heading) {
 	position: relative;
 	z-index: 2;
+	width: 100%;
 }
 
 .projects-section__visual img:last-child {
 	position: relative;
 	z-index: 2;
+	width: min(100%, 28rem);
 }
 
 .projects-section__stack {
@@ -72,20 +77,6 @@ import { projectItems } from '@/data/portfolio'
 	z-index: 2;
 }
 
-.projects-section__visual {
-	align-content: center;
-	gap: 1rem;
-	justify-items: end;
-}
-
-.projects-section__visual img:last-child {
-	width: min(100%, 28rem);
-}
-
-.projects-section__visual :deep(.section-heading) {
-	width: 100%;
-}
-
 .projects-section :deep(.section-heading__title) {
 	color: var(--royal-purple-300);
 	text-align: left;
@@ -93,6 +84,7 @@ import { projectItems } from '@/data/portfolio'
 
 .projects-section :deep(.section-heading__accent) {
 	color: var(--french-rose-300);
+	
 }
 
 @include respond-down(tablet) {

@@ -86,15 +86,15 @@ $mint-blue-100: #EBFDFA;
   --accent-strong: var(--french-rose-300);
   --accent-soft: var(--french-rose-100);
   --accent-on-strong: #ffffff;
-  --panel-bg: rgba(255, 243, 247, 0.9);
+  --panel-bg: var(--french-rose-100);
   --panel-raised: rgba(214, 193, 234, 0.9);
   --panel-border: rgba(127, 85, 177, 0.62);
-  --panel-border-soft: rgba(155, 244, 228, 0.95);
+  --panel-border-soft: var(--royal-purple-300);
   --panel-shadow: 0 18px 44px rgba(91, 61, 126, 0.18);
   --footer-bg: #{$french-rose-100};
 
   /* ===== Toggle tokens (LIGHT) ===== */
-  --switch-border: var(--royal-purple-100);
+  --switch-border: var(--french-rose-200);
   --switch-divider: rgba(0,0,0,.12);
 
   /* Mitad inactiva (púrpura), activa (rosado) */
@@ -132,7 +132,7 @@ $mint-blue-100: #EBFDFA;
       #{$royal-purple-300} 100%
   );
   --app-fg: #{$royal-purple-100};
-  --text-muted: #{$royal-purple-100};
+  --text-muted: #{$french-rose-100};
   --heading-strong: #{$french-rose-100};
   --accent-strong: var(--mint-blue-300);
   --accent-soft: rgba(255, 64, 129, 0.22);
@@ -143,7 +143,7 @@ $mint-blue-100: #EBFDFA;
   --panel-border-soft: rgba(155, 244, 228, 0.9);
   --panel-shadow: 0 20px 42px rgba(26, 16, 39, 0.35);
   --footer-bg: rgba(255, 217, 230, 0.9);
-  --h1-color: var(--french-rose-100);
+  --h1-color: var(--french-rose-200);
   --h3-color: #{$mint-blue-300};
   --accent-text: var(--mint-blue-300);
 

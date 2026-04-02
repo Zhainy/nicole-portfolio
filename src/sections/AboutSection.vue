@@ -27,13 +27,13 @@ import SectionHeading from '@/components/SectionHeading.vue'
 
         <h4>Hola, soy <span class="about-section__highlight">Nicole Fernández</span>👋🏻.</h4>
         <p>
-          Soy <span class="about-section__highlight">Diseñadora Gráfica e Ilustradora</span> reconvertida a <span class="about-section__highlight">Front-End Developer.</span>  Recientemente me desempeñé como <span class="about-section__highlight">Teaching Assistant</span>, donde consolidé mis conocimientos guiando a nuevos desarrolladores en el mundo del código
+          Soy una <span class="about-section__highlight">Diseñadora Gráfica e Ilustradora</span> que dio el salto al <span class="about-section__highlight">desarrollo Full Stack.</span>  Mi camino profesional en el código comenzó con un desafío importante: desempeñarme como<span class="about-section__highlight"> Teaching Assistant</span>, en bootcamps de <span class="about-section__highlight">Front-End,</span>  donde hoy guío a nuevos desarrolladores y aseguro la calidad técnica de sus proyectos.
         </p>
         <p>
-          Hoy combino mi criterio visual con una base técnica sólida en <span class="about-section__highlight">Vue.js y Java (Spring Boot).</span> Me apasiona construir interfaces que sean tan estéticas como funcionales y escalables.
+          Actualmente, combino mi criterio visual con una base robusta en <span class="about-section__highlight">Vue.js y Java (Spring Boot).</span> mientras me especializo en <span class="about-section__highlight">Oracle Cloud Infrastructure (OCI)</span>  a través del programa Tech Advanced de ONE. Mi objetivo es unir la precisión del diseño con arquitecturas de software escalables y soluciones en la nube.
         </p>
         <p>
-          ¿Buscas a alguien con ojo para el diseño y manos para el código Full Stack? 
+          ¿Buscas un perfil híbrido que domine desde el píxel hasta la lógica del servidor?
           <span class="about-section__highlight">Hablemos.</span>
         </p>
       </div>
@@ -67,7 +67,7 @@ import SectionHeading from '@/components/SectionHeading.vue'
   max-width: none;
   pointer-events: none;
   user-select: none;
-  transform: rotate(-5deg);
+  transform: rotate(5deg);
 
 }
 
@@ -86,7 +86,7 @@ import SectionHeading from '@/components/SectionHeading.vue'
 }
 
 .about-section__copy {
-  max-width: 30rem;
+  max-width: 32rem;
   position: relative;
   z-index: 1;
 }
@@ -111,7 +111,7 @@ import SectionHeading from '@/components/SectionHeading.vue'
 .about-section__copy p {
   color: var(--royal-purple-300);
   font-size: 0.85rem;
-  max-width: 27rem;
+  max-width: 29rem;
 }
 
 .about-section__copy p + p {
@@ -120,7 +120,6 @@ import SectionHeading from '@/components/SectionHeading.vue'
 
 .about-section__highlight {
   color: var(--french-rose-300);
-  font-family: var(--font-primary);
   font-weight: 700;
 }
 
@@ -146,6 +145,12 @@ import SectionHeading from '@/components/SectionHeading.vue'
 
   .about-section__copy {
     max-width: none;
+    padding: clamp(1.2rem, 3.8vw, 1.8rem);
+    border-radius: 1.2rem;
+    border: 2px solid var(--panel-border);
+    background: var(--salmon-pink-100);
+    box-shadow: var(--panel-shadow);
+    backdrop-filter: blur(8px);
   }
 
   .about-section__arrow {
@@ -154,10 +159,22 @@ import SectionHeading from '@/components/SectionHeading.vue'
   }
 
   .about-section__shape {
-    top: -28%;
-    right: -18%;
-    width: min(165%, 38rem);
+    display: none;
   }
+
+  .about-section__copy p {
+    max-width: none;
+  }
+
+  .about-section__hearts {
+    width: 3.8rem;
+    right: 0.6rem;
+    top: 0.45rem;
+  }
+}
+
+:global(.dark) .about-section__copy {
+  background: var(--salmon-pink-200);
 }
 
 /* Highlights use accent pink in dark mode instead of mint-blue */

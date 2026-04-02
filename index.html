@@ -9,6 +9,11 @@
       content="Portafolio de Nicole Fernández, diseñadora gráfica y front-end developer trainee enfocada en interfaces visuales y desarrollo web." 
     />
     <title>Nicole Fernández | Front-End Developer Trainee</title>
+    <script>
+      const savedTheme = localStorage.getItem('theme')
+      const shouldUseDark = savedTheme ? savedTheme === 'dark' : true
+      document.documentElement.classList.toggle('dark', shouldUseDark)
+    </script>
   </head>
   <body>
     <div id="app"></div>

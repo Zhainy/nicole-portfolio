@@ -13,22 +13,28 @@ import SkillHtml from '@/assets/images/skills-html.png'
 import SkillId from '@/assets/images/skills-id.png'
 import SkillJs from '@/assets/images/skills-js.png'
 import SkillPs from '@/assets/images/skills-ps.png'
-import ProjectPreviewOne from '@/assets/images/proyects-preview-1.png'
-import ProjectPreviewTwo from '@/assets/images/proyects-preview-2.png'
 import SkillSass from '@/assets/images/skills-sass.png'
+import ProjectApiVollMed from '@/assets/images/projects-api_vollmed.png'
+import ProjectLandingAsDePapel from '@/assets/images/projects-landing_as_de_papel.png'
+import ProjectLukApp from '@/assets/images/projects-lukapp.png'
+import ProjectBibliotecaUNTEC from '@/assets/images/projects-untec.png'
+import ProjectOtecPrimavera from '@/assets/images/projects-otec_primavera.png'
 import SkillVite from '@/assets/images/skills-vite.png'
 import SkillVue from '@/assets/images/skills-vue.png'
+import VideoLukApp from '@/assets/videos/video-lukapp.mp4'
+import VideoBibliotecaUNTEC from '@/assets/videos/video-untec.mp4'
+import VideoOtecPrimavera from '@/assets/videos/video-otec_primavera.mp4'
 
 export const heroActions = [
   {
-    label: 'Ver proyectos',
+    label: 'GitHub',
     icon: 'github',
-    href: '#projects',
+    href: 'https://github.com/Zhainy',
   },
   {
-    label: 'Contáctame',
+    label: 'LinkedIn',
     icon: 'linkedin',
-    href: '#contact',
+    href: 'https://www.linkedin.com/in/niferng/',
   },
   {
     label: 'Solicitar CV',
@@ -82,17 +88,18 @@ export const projectItems = [
     category: 'Full Stack SaaS',
     description:
       'Plataforma de gestión financiera personal con arquitectura Spring Boot. Permite el control total de presupuestos, transacciones y visualización de datos en tiempo real.',
-    image: ProjectPreviewOne, // Reemplazar con captura de LukApp
+    image: ProjectLukApp,
     tags: ['Java', 'Spring Boot', 'MySQL', 'Vue.js'],
-    demoUrl: '#',
+    demoUrl: 'https://zhainy.github.io/LukApp-Wallet/',
     repoUrl: 'https://github.com/Zhainy/LukApp-Wallet',
+    video: VideoLukApp,
   },
   {
     title: 'Voll.med API',
     category: 'Back-end REST',
     description:
       'Sistema de gestión para una clínica médica. Implementa autenticación JWT, validaciones de reglas de negocio complejas y documentación técnica con Swagger.',
-    image: ProjectPreviewTwo, // Reemplazar con captura de Voll-Med
+    image: ProjectApiVollMed,
     tags: ['Java', 'Spring Boot', 'MySQL', 'Flyway'],
     demoUrl: '#',
     repoUrl: 'https://github.com/Zhainy/Voll-Med-Alura',
@@ -102,27 +109,29 @@ export const projectItems = [
     category: 'Web Application',
     description:
       'Sistema de préstamos y gestión de libros. Enfocado en la organización de catálogos y una experiencia de usuario fluida para la administración de recursos.',
-    image: ProjectPreviewOne, 
+    image: ProjectBibliotecaUNTEC,
     tags: ['Java', 'Spring Boot', 'Thymeleaf', 'PostgreSQL'],
     demoUrl: '#',
     repoUrl: 'https://github.com/Zhainy/biblioteca-digital-UNTEC',
+    video: VideoBibliotecaUNTEC,
   },
   {
     title: 'OTEC Primavera (ABP)',
     category: 'Full Stack Collaborative',
     description:
       'Proyecto desarrollado bajo metodología ABP. Un sistema integral para gestión de capacitaciones que destaca por su trabajo en equipo y arquitectura escalable.',
-    image: ProjectPreviewTwo,
+    image: ProjectOtecPrimavera,
     tags: ['Java', 'Spring Boot', 'JSP', 'Collaboration'],
     demoUrl: 'https://otec-primavera-abp6-production.up.railway.app/login',
     repoUrl: 'https://github.com/Zhainy/OTEC-Primavera-ABP6',
+    video: VideoOtecPrimavera,
   },
   {
     title: 'As de Papel',
     category: 'Landing Page & UI',
     description:
       'Landing page para marca de papelería. Un diseño "pixel-perfect" con alta atención al detalle visual, animaciones suaves y optimización responsiva.',
-    image: ProjectPreviewOne,
+    image: ProjectLandingAsDePapel,
     tags: ['HTML5', 'Sass', 'JavaScript', 'Design'],
     demoUrl: 'https://zhainy.github.io/as-de-papel-landing/',
     repoUrl: 'https://github.com/Zhainy/asdepapel-landing',

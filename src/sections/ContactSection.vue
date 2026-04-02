@@ -6,7 +6,7 @@ import { contactDetails } from '@/data/portfolio'
 
 <template>
 	<section id="contact" class="contact-section section-shell">
-		<div class="contact-section__panel panel">
+		<div class="contact-section__panel panel panel--neon-border">
 			<SectionHeading
 				title="Contacto"
 				eyebrow="Disponible"

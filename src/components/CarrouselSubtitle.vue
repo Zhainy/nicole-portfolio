@@ -8,12 +8,12 @@
 
 <script setup>
 const lines = [
-  'FRONT-END',
-  'DEVELOPER TRAINEE',
-  'UI DESIGN',
-  'BRANDING',
-  'CREATIVE CODE',
-  'VISUAL THINKING'
+  'FRONT-END DEVELOPER',
+  'FULL STACK JAVA',
+  'UI/UX DESIGNER',
+  'SPRING BOOT & VUE',
+  'CREATIVE PROGRAMMER',
+  'WEB DESIGNER'
 ]
 </script>
 
@@ -21,13 +21,14 @@ const lines = [
 
 <style lang="scss" scoped>
 .subtitle-wrapper {
-  height: 7.5rem;
+  height: 4rem;
   overflow: hidden;
   position: relative;
   text-transform: uppercase;
 }
 
 .subtitle-track h2 {
+  line-height: 4rem;
   background-image: linear-gradient(
     135deg,
     var(--french-rose-300) 0%,
@@ -44,21 +45,22 @@ const lines = [
 .subtitle-track {
   display: flex;
   flex-direction: column;
-  animation: rollUp 8s ease-in-out infinite;
+  animation: rollUp 10s ease-in-out infinite;
 }
 
 @keyframes rollUp {
-  0%, 10% { transform: translateY(0); }
-  15%, 25% { transform: translateY(-4rem); }
-  30%, 40% { transform: translateY(-8rem); }
-  45%, 55% { transform: translateY(-12rem); }
-  60%, 70% { transform: translateY(-16rem); }
-  75%, 100% { transform: translateY(0); }
+  0%,   8%  { transform: translateY(0); }
+  13%,  21% { transform: translateY(-4rem); }
+  26%,  34% { transform: translateY(-8rem); }
+  39%,  47% { transform: translateY(-12rem); }
+  52%,  60% { transform: translateY(-16rem); }
+  65%,  73% { transform: translateY(-20rem); }
+  78%, 100% { transform: translateY(0); }
 }
 
 @include respond-down(phone) {
   .subtitle-wrapper {
-    height: 5.8rem;
+    height: 2.9rem;
   }
 
   .subtitle-track h2 {

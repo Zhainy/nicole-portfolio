@@ -42,8 +42,9 @@ import { skillItems } from '@/data/portfolio'
     margin-top: 2rem;
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 1rem;
+	gap: 2rem;
 	list-style: none;
+	padding: 0 2.5rem;
 }
 
 .skills-section__item {
@@ -53,7 +54,7 @@ import { skillItems } from '@/data/portfolio'
 	padding: 0.9rem 0.6rem;
 	border-radius: 1rem;
 	border: 2px solid var(--panel-border-soft);
-	background: color-mix(in srgb, var(--panel-raised) 86%, white);
+	background: color-mix(in srgb, var(--panel-raised) 90%, var(--french-rose-300));
 	cursor: default;
 	transition:
 		transform 180ms ease,
@@ -88,11 +89,12 @@ import { skillItems } from '@/data/portfolio'
 	font-size: 1rem;
 	letter-spacing: 0.08rem;
 	color: var(--heading-strong);
+	font-weight: 500;
 }
 
 .skills-section__visual {
 	position: absolute;
-    padding-right: 1rem;
+    padding-right: 3.5rem;
 	right: 0;
 	bottom: 0;
 	z-index: 1;

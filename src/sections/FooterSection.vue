@@ -90,7 +90,6 @@ import { contactDetails } from '@/data/portfolio'
 }
 
 .footer-section__meta p {
-    font-family: var(--font-primary);
     font-style: italic;
     font-weight: 600;
     font-size: 1rem;

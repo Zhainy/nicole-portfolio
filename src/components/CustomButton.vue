@@ -98,6 +98,7 @@ const iconComponent = computed(() => (props.icon ? svgIcons[props.icon] : null))
   min-height: 2.45rem;
   padding: 0.45rem 1rem;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .button--large {
