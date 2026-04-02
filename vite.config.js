@@ -5,6 +5,7 @@ import svgLoader from 'vite-svg-loader'
 import path from 'path'
 
 export default defineConfig({
+  base: '/nicole-portfolio/',
   plugins: [
     vue(),
     svgLoader()
