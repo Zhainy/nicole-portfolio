@@ -13,9 +13,14 @@ import { svgIcons } from '@/utils/icons.js'
     <ToggleThemeMode />
     <div class="section-grid hero-section__grid">
       <div class="section-copy hero-section__copy">
-        <p class="hero-section__eyebrow">Portfolio creativo y front-end</p>
+        <p class="hero-section__eyebrow">Creative Coding & Full-Stack Solutions</p>
         <h1>Nicole <br />Fernández</h1>
-        <CarrouselSubtitle />
+        <CarrouselSubtitle class="hero-section__subtitle" />
+        <img
+          class="hero-section__image hero-section__image--mobile"
+          :src="heroIllustration"
+          alt="Ilustración de Nicole celebrando con su notebook"
+        />
 
         <div class="hero-section__contact panel panel--neon-border">
           <div class="hero-section__mail">
@@ -24,19 +29,19 @@ import { svgIcons } from '@/utils/icons.js'
           </div>
           <p>{{ contactDetails.availability }}</p>
           <CustomButton
-          label="open to work_"
-          href="#contact"
-          icon="briefcase-business"
-          variant="primary"
-          size="large"
-          icon-size="large"
-        />
+            label="open to work_"
+            href="#contact"
+            icon="briefcase-business"
+            variant="primary"
+            size="large"
+            icon-size="large"
+          />
         </div>
       </div>
 
       <div class="section-visual hero-section__visual">
         <img
-          class="hero-section__image"
+          class="hero-section__image hero-section__image--desktop"
           :src="heroIllustration"
           alt="Ilustración de Nicole celebrando con su notebook"
         />
@@ -69,7 +74,7 @@ import { svgIcons } from '@/utils/icons.js'
 
 .hero-section__copy {
   display: grid;
-  gap: 1.4rem;
+  gap: 0.85rem;
   max-width: 35rem;
 }
 
@@ -82,11 +87,21 @@ import { svgIcons } from '@/utils/icons.js'
   font-weight: 500;
 }
 
+.hero-section h1 {
+  text-shadow:
+    3px 3px 0 var(--hero-title-shadow-hard),
+    0 6px 18px var(--hero-title-shadow-soft);
+}
+
 .hero-section__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 0.15rem;
+}
+
+.hero-section__subtitle {
+  margin-bottom: -1.5rem;
 }
 
 :global(.dark) .hero-section :deep(.button--outline:hover),
@@ -108,7 +123,7 @@ import { svgIcons } from '@/utils/icons.js'
   gap: 0.8rem;
   padding: 1rem 1.15rem;
   width: min(100%, 30rem);
-  margin-top: 1.1rem;
+  margin-top: 0.05rem;
 }
 
 .hero-section__mail {
@@ -136,19 +151,18 @@ import { svgIcons } from '@/utils/icons.js'
   justify-items: center;
   align-content: start;
   gap: 0.25rem;
-  margin-top: -1.5rem;
+  margin-top: -1.75rem;
 }
 
 .hero-section__image {
   position: relative;
-  top: 0;
   z-index: 1;
   width: min(100%, 32rem);
-  filter: drop-shadow(0 14px 24px color-mix(in srgb, var(--royal-purple-500) 30%, transparent));
+  filter: var(--hero-image-shadow);
 }
 
-:global(.dark) .hero-section__image {
-  filter: none;
+.hero-section__image--mobile {
+  display: none;
 }
 
 @include respond-down(tablet) {
@@ -168,17 +182,60 @@ import { svgIcons } from '@/utils/icons.js'
   }
 
   .hero-section__contact {
-    margin-top: 0.4rem;
+    margin-top: 0;
   }
 }
 
 @include respond-down(phone) {
+  .hero-section__grid {
+    position: relative;
+  }
+
   .hero-section__copy {
     order: -1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-section__copy > :not(.hero-section__image--mobile) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-section__contact {
+    margin-top: -0.35rem;
   }
 
   .hero-section__visual {
     order: 0;
+    margin-top: 0.65rem;
+    width: 100%;
+    justify-items: center;
+    gap: 0;
+    min-height: auto;
+  }
+
+  .hero-section__image--desktop {
+    display: none;
+  }
+
+  .hero-section__image--mobile {
+    display: block;
+    position: absolute;
+    top: -1.5rem;
+    right: -2.75rem;
+    opacity: 0.9;
+    z-index: 0;
+    width: min(64vw, 16.5rem);
+    pointer-events: none;
+  }
+
+  .hero-section__actions {
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: 0;
   }
 }
 </style>

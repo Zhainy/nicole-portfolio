@@ -45,6 +45,24 @@ $mint-blue-100: #EBFDFA;
   --h1-color: var(--french-rose-300);
   --h3-color: var(--french-rose-300);
   --accent-text: var(--royal-purple-300);
+  --hero-title-shadow-hard: color-mix(in srgb, var(--salmon-pink-500) 78%, transparent);
+  --hero-title-shadow-soft: color-mix(in srgb, var(--french-rose-300) 26%, transparent);
+  --hero-image-shadow: drop-shadow(0 14px 24px color-mix(in srgb, var(--royal-purple-500) 30%, transparent));
+  --subtitle-glitch-left: color-mix(in srgb, var(--mint-blue-400) 62%, transparent);
+  --subtitle-glitch-right: color-mix(in srgb, var(--royal-purple-300) 68%, transparent);
+  --subtitle-glitch-glow: color-mix(in srgb, var(--salmon-pink-400) 18%, transparent);
+  --section-slogan-color: var(--french-rose-300);
+  --section-slogan-shadow: rgba(109, 27, 55, 0.14);
+  --skills-card-bg: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--french-rose-100) 78%, var(--panel-bg)) 0%,
+    color-mix(in srgb, var(--salmon-pink-200) 82%, var(--panel-bg)) 52%,
+    color-mix(in srgb, var(--royal-purple-100) 72%, var(--panel-bg)) 100%
+  );
+  --skills-card-highlight: inset 0 1px 0 color-mix(in srgb, white 28%, transparent);
+  --skills-card-hover-shadow: 0 10px 15px color-mix(in srgb, var(--accent-strong) 15%, transparent);
+  --skills-icon-hover-filter: brightness(1.15) contrast(1.15) saturate(1.1)
+    drop-shadow(0 8px 16px color-mix(in srgb, var(--accent-strong) 28%, transparent));
 
   /* Exponer paleta como CSS vars */
   --royal-purple-500: #{$royal-purple-500};
@@ -146,6 +164,14 @@ $mint-blue-100: #EBFDFA;
   --h1-color: var(--french-rose-200);
   --h3-color: #{$mint-blue-300};
   --accent-text: var(--mint-blue-300);
+  --hero-title-shadow-hard: color-mix(in srgb, var(--royal-purple-500) 74%, transparent);
+  --hero-title-shadow-soft: color-mix(in srgb, var(--mint-blue-300) 18%, transparent);
+  --hero-image-shadow: none;
+  --subtitle-glitch-left: color-mix(in srgb, var(--mint-blue-300) 52%, transparent);
+  --subtitle-glitch-right: color-mix(in srgb, var(--french-rose-300) 58%, transparent);
+  --subtitle-glitch-glow: color-mix(in srgb, var(--royal-purple-400) 12%, transparent);
+  --section-slogan-color: var(--mint-blue-300);
+  --section-slogan-shadow: rgba(155, 244, 228, 0.18);
 
   --switch-border: var(--royal-purple-300);
   --switch-divider: rgba(255,255,255,.18);

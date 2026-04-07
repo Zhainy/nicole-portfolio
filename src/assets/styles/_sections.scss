@@ -59,6 +59,18 @@
 	text-transform: uppercase;
 }
 
+.section-heading__slogan {
+	max-width: 38rem;
+	margin: 0;
+	color: var(--section-slogan-color);
+	font-family: var(--font-caption);
+	font-size: clamp(1.1rem, 2vw, 1.35rem);
+	font-weight: 700;
+	letter-spacing: 0.04rem;
+	line-height: 1.25;
+	text-shadow: 0 4px 12px var(--section-slogan-shadow);
+}
+
 .section-heading__accent {
 	font-family: var(--font-secondary);
 	color: var(--accent-strong);

@@ -12,6 +12,10 @@ defineProps({
     type: String,
     default: '',
   },
+  slogan: {
+    type: String,
+    default: '',
+  },
   description: {
     type: String,
     default: '',
@@ -27,6 +31,7 @@ defineProps({
       {{ title }}
       <span class="section-heading__accent">/&gt;</span>
     </h2>
+    <p v-if="slogan" class="section-heading__slogan">{{ slogan }}</p>
     <p v-if="description" class="section-heading__description">{{ description }}</p>
   </header>
 </template>

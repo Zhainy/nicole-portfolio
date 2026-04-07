@@ -83,6 +83,23 @@ import SectionHeading from '@/components/SectionHeading.vue'
   right: -7%;
   width: min(7rem, 28vw);
   transform: rotate(8deg);
+  transform-origin: center;
+  animation: aboutArrowFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes aboutArrowFloat {
+  0%,
+  100% {
+    transform: rotate(8deg) translate3d(0, 0, 0) scale(1);
+  }
+
+  35% {
+    transform: rotate(12deg) translate3d(0.18rem, -0.3rem, 0) scale(1.035);
+  }
+
+  62% {
+    transform: rotate(6deg) translate3d(-0.12rem, 0.12rem, 0) scale(0.985);
+  }
 }
 
 .about-section__copy {
@@ -180,5 +197,11 @@ import SectionHeading from '@/components/SectionHeading.vue'
 /* Highlights use accent pink in dark mode instead of mint-blue */
 :global(.dark) .about-section__highlight {
   color: var(--french-rose-300);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-section__arrow {
+    animation: none;
+  }
 }
 </style>

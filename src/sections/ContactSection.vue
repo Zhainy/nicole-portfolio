@@ -10,7 +10,8 @@ import { contactDetails } from '@/data/portfolio'
 			<SectionHeading
 				title="Contacto"
 				eyebrow="Disponible"
-				description="Si te interesa mi perfil para una práctica, trainee o una oportunidad junior, conversemos."
+				slogan="Transformando ideas complejas en soluciones web robustas y estéticas."
+				description="Si buscas un perfil proactivo para una práctica, trainee o posición junior, ¡hablemos! Estoy lista para aportar a tu equipo."
 			/>
 			<div class="contact-section__content">
 				<div>

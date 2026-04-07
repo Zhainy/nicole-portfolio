@@ -10,7 +10,7 @@ import { contactDetails } from '@/data/portfolio'
 		<img class="footer-section__shape" :src="footerShape" alt="" aria-hidden="true" />
 		<div class="footer-section__content">
 			<div>
-				<h3>Nicole Fernández <span class="footer-section__accent">| Front-End Developer Trainee</span></h3>
+				<h3>Nicole Fernández <span class="footer-section__accent">| Full-Stack Developer | Design & Code</span></h3>
 				<p class="footer-section__availability">{{ contactDetails.availability }}</p>
 			</div>
 

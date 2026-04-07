@@ -6,24 +6,24 @@ import { skillItems } from '@/data/portfolio'
 </script>
 
 <template>
-	<section id="skills" class="skills-section section-shell">
-		<div class="section-grid skills-section__grid">
-			<div class="section-copy skills-section__copy">
-				<div class="skills-section__panel panel">
-                    <SectionHeading title="Skills" />
-					<ul class="skills-section__list">
-						<li v-for="skill in skillItems" :key="skill.name" class="skills-section__item">
-							<img :src="skill.image" :alt="`Logo de ${skill.name}`" />
-							<span>{{ skill.name }}</span>
-						</li>
-					</ul>
-					<div class="section-visual skills-section__visual">
-						<img :src="skillsIllustration" alt="Ilustración de Nicole leyendo con íconos flotantes" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section id="skills" class="skills-section section-shell">
+    <div class="section-grid skills-section__grid">
+      <div class="section-copy skills-section__copy">
+        <div class="skills-section__panel panel panel--neon-border">
+          <SectionHeading title="Skills" />
+          <ul class="skills-section__list">
+            <li v-for="skill in skillItems" :key="skill.name" class="skills-section__item">
+              <img :src="skill.image" :alt="`Logo de ${skill.name}`" />
+              <span>{{ skill.name }}</span>
+            </li>
+          </ul>
+          <div class="section-visual skills-section__visual">
+            <img :src="skillsIllustration" alt="Ilustración de Nicole leyendo con íconos flotantes" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -35,7 +35,7 @@ import { skillItems } from '@/data/portfolio'
 	position: relative;
 	padding: 2.5rem;
 	padding-bottom: 8.8rem;
-    margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .skills-section__list {
@@ -58,7 +58,9 @@ import { skillItems } from '@/data/portfolio'
 	height: 100%;
 	border-radius: 1rem;
 	border: 2px solid var(--panel-border-soft);
-	background: color-mix(in srgb, var(--panel-raised) 90%, var(--french-rose-300));
+	background: var(--skills-card-bg);
+	box-shadow: var(--skills-card-highlight);
+	backdrop-filter: blur(10px);
 	cursor: default;
 	transition:
 		transform 180ms ease,
@@ -69,11 +71,12 @@ import { skillItems } from '@/data/portfolio'
 .skills-section__item:hover {
 	transform: scale(1.1) translateY(-3px);
 	border-color: var(--accent-strong);
-	box-shadow: 0 10px 22px color-mix(in srgb, var(--accent-strong) 22%, transparent);
+	box-shadow: var(--skills-card-hover-shadow);
 }
 
 .skills-section__item:hover img {
 	animation: skillPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+	filter: var(--skills-icon-hover-filter);
 }
 
 @keyframes skillPop {
@@ -86,6 +89,8 @@ import { skillItems } from '@/data/portfolio'
 	width: 3.4rem;
 	height: 3.4rem;
 	object-fit: contain;
+	filter: brightness(1) contrast(1) saturate(1);
+	transition: filter 180ms ease;
 }
 
 .skills-section__item span {
